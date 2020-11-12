@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# Bu skript ile, Centos işletim sistemine yeni Docker ve Docker-Compose yükleme işlemini gerçekleştirebilirsiniz.
+# Bu skript ile, Centos işletim sistemine yeni Docker, Docker-Compose ve git'in son sürümün yükleme işlemini gerçekleştirebilirsiniz.
 
 yum -y update
 
@@ -21,3 +21,9 @@ curl -L https://raw.githubusercontent.com/docker/compose/1.25.5/contrib/completi
 curl -L "https://github.com/docker/compose/releases/download/1.27.4/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 
 chmod +x /usr/local/bin/docker-compose
+
+yum -y remove git*
+
+yum -y install https://packages.endpoint.com/rhel/7/os/x86_64/endpoint-repo-1.7-1.x86_64.rpm
+
+yum -y install git
