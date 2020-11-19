@@ -1,4 +1,4 @@
-!#/bin/sh
+#!/bin/sh
 echo "konteynerleri temizliyorum"
 sleep 0.5
 
