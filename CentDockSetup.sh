@@ -4,7 +4,7 @@
 
 yum -y update
 
-yum -y install yum-utils
+yum install -y yum-utils device-mapper-persistent-data lvm2
 
 yum-config-manager \
     --add-repo \
@@ -15,6 +15,8 @@ yum -y install docker-ce docker-ce-cli containerd.io
 systemctl start docker
 
 systemctl enable docker
+
+yum -y install bash-completion
 
 curl -L https://raw.githubusercontent.com/docker/compose/1.25.5/contrib/completion/bash/docker-compose -o /etc/bash_completion.d/docker-compose
 
